@@ -2,7 +2,7 @@ from http import HTTPStatus
 
 # Импортируем функцию для определения модели пользователя.
 from django.contrib.auth import get_user_model
-from django.test import TestCase, Client
+from django.test import TestCase
 from django.urls import reverse
 
 from notes.models import Note
@@ -15,8 +15,6 @@ class TestRoutes(TestCase):
     @classmethod
     def setUpTestData(cls):
         cls.author = User.objects.create(username='Лев Толстой')
-        # cls.author_client = Client()
-        # cls.author_client.force_login(cls.author)
         cls.reader = User.objects.create(username='Читатель простой')
         cls.note = Note.objects.create(
             title='Заголовок',
